@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { routing } from './app.routing';
+
+import { QuestionFormComponent } from './questions/question-form/question-form.component';
+import { QuestionService } from './questions/shared/question.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuestionsComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
